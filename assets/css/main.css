@@ -1602,6 +1602,7 @@ input, select, textarea {
 		.image.featured {
 			display: block;
 			width: 100%;
+			height: 200px; /* Forces all images to be 200px high */
 			margin: 0 0 2.5em 0;
 		}
 
