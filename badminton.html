@@ -8,12 +8,6 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<script src="assets/js/slideshow.js" defer></script>
 	<style>
-		.grid-container {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: 20px;
-		}
-
 		.first-column {
 			width: auto;
 		}
@@ -25,25 +19,27 @@
 
 		.calendar {
 			width: 100%;
-			margin-top: 20px;
+			margin-top: 5px;
+			border-collapse: collapse;
+			table-layout: fixed;
 		}
 
 		.calendar th,
 		.calendar td {
-			padding: 10px;
+			padding: 1px;
 			text-align: center;
 		}
 
 		.calendar td.crossed {
 			background: linear-gradient(45deg,
-					rgba(200, 200, 200, 0.3) 25%,
+					rgba(16, 16, 199, 0.35) 25%,
 					transparent 25%,
 					transparent 50%,
-					rgba(200, 200, 200, 0.3) 50%,
-					rgba(200, 200, 200, 0.3) 75%,
+					rgba(16, 16, 199, 0.35) 50%,
+					rgba(16, 16, 199, 0.35) 75%,
 					transparent 75%,
 					transparent);
-			background-size: 10px 10px;
+			background-size: 20px 20px;
 		}
 
 		.slideshow {
@@ -109,7 +105,7 @@
 			</div>
 		</div>
 
-		<div id="main-wrapper">
+		<div id="secondary-wrapper">
 			<div class="container">
 				<div class="row gtr-200">
 					<div class="col-6 col-12-medium">
@@ -215,7 +211,7 @@
 			</div>
 		</div>
 
-		<div id="main-wrapper">
+		<div id="secondary-wrapper">
 			<div class="container">
 				<div id="content">
 					<!-- Content -->
@@ -237,11 +233,11 @@
 							<tbody>
 								<!-- Just from 10 to 20 crossed, need to adjust -->
 								<script>
-									for (let hour = 7; hour <= 22; hour++) {
+									for (let hour = 8; hour <= 21; hour++) {
 										const nextHour = hour + 1;
 										document.write(`
 											<tr>
-												<td>${String(hour).padStart(2, '0')}:00 - ${String(nextHour).padStart(2, '0')}:00</td>
+												<td>${String(hour).padStart(2, '0')}:30 - ${String(nextHour).padStart(2, '0')}:30</td>
 												<td class="${hour >= 10 && hour < 20 ? 'crossed' : ''}"></td>
 												<td class="${hour >= 10 && hour < 20 ? 'crossed' : ''}"></td>
 												<td class="${hour >= 10 && hour < 20 ? 'crossed' : ''}"></td>

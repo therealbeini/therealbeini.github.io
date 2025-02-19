@@ -8,12 +8,6 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<script src="assets/js/slideshow.js" defer></script>
 	<style>
-		.grid-container {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: 20px;
-		}
-
 		.first-column {
 			width: auto;
 		}
@@ -25,26 +19,64 @@
 
 		.calendar {
 			width: 100%;
-			margin-top: 20px;
+			margin-top: 5px;
+			border-collapse: collapse;
+			table-layout: fixed;
 		}
 
 		.calendar th,
 		.calendar td {
-			padding: 10px;
+			padding: 1px;
 			text-align: center;
+			position: relative;
 		}
 
-		.calendar td.crossed {
+		.calendar td.crossed1 {
 			background: linear-gradient(45deg,
-					rgba(200, 200, 200, 0.3) 25%,
+					rgba(16, 16, 199, 0.35) 25%,
 					transparent 25%,
 					transparent 50%,
-					rgba(200, 200, 200, 0.3) 50%,
-					rgba(200, 200, 200, 0.3) 75%,
+					rgba(16, 16, 199, 0.35) 50%,
+					rgba(16, 16, 199, 0.35) 75%,
 					transparent 75%,
 					transparent);
-			background-size: 10px 10px;
+			background-size: 20px 20px;
 		}
+
+		.calendar td.crossed2 {
+			background: linear-gradient(45deg,
+					rgba(199, 16, 40, 0.35) 25%,
+					transparent 25%,
+					transparent 50%,
+					rgba(199, 16, 40, 0.35) 50%,
+					rgba(199, 16, 40, 0.35) 75%,
+					transparent 75%,
+					transparent);
+			background-size: 20px 20px;
+		}
+
+		.calendar td.crossed3 {
+			background:
+					linear-gradient(45deg,
+							rgba(16, 16, 199, 0.5) 25%,
+							transparent 25%,
+							transparent 50%,
+							rgba(16, 16, 199, 0.5) 50%,
+							rgba(16, 16, 199, 0.5) 75%,
+							transparent 75%,
+							transparent),
+					linear-gradient(45deg,
+							rgba(199, 16, 40, 0.4) 0%,
+							transparent 0%,
+							transparent 25%,
+							rgba(199, 16, 40, 0.4) 25%,
+							rgba(199, 16, 40, 0.4) 50%,
+							transparent 50%,
+							transparent 75%,
+							rgba(199, 16, 40, 0.4) 75%,
+							rgba(199, 16, 40, 0.4) 100%);
+			background-size: 20px 20px;
+	}
 
 		.slideshow {
 			max-width: 600px;
@@ -54,6 +86,27 @@
 		.slideshow__item img {
 			width: 100%;
 			height: auto;
+		}
+
+		.heading-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.legend {
+			display: flex;
+			gap: 20px;
+		}
+
+		.legend-item {
+			font-size: 18px;
+		}
+
+		.legend-box {
+			width: 20px;
+			height: 20px;
+			display: inline-block;
 		}
 	</style>
 </head>
@@ -101,7 +154,7 @@
 							Besuchen Sie uns und erleben Sie Tennis in einer modernen und komfortablen Atmosphäre!</p>
 
 						<p> Wir möchten Sie darauf hinweisen, dass auf unseren Indoor-Tennisplätzen <strong>keine
-							Sandplatzschuhe</strong> getragen werden dürfen, um den speziellen Bodenbelag zu schonen und eine
+								Sandplatzschuhe</strong> getragen werden dürfen, um den speziellen Bodenbelag zu schonen und eine
 							sichere Spielfläche zu gewährleisten.
 							Zudem bitten wir darum, in der Halle keine Getränke mitzubringen, ausgenommen Mineralwasser.
 							So können wir eine angenehme und saubere Umgebung für alle Spieler garantieren.
@@ -111,7 +164,7 @@
 			</div>
 		</div>
 
-		<div id="main-wrapper">
+		<div id="secondary-wrapper">
 			<div class="container">
 				<div class="row gtr-200">
 					<div class="col-6 col-12-medium">
@@ -223,12 +276,25 @@
 			</div>
 		</div>
 
-		<div id="main-wrapper">
+		<div id="secondary-wrapper">
 			<div class="container">
 				<div id="content">
 					<!-- Content -->
 					<section>
-						<h3>Belegte Abo-Stunden</h3>
+						<div class="heading-container">
+							<h3>Belegte Abo-Stunden</h3>
+
+							<!-- Legend -->
+							<div class="legend">
+								<div class="legend-item">
+									<span class="legend-box" style="background-color: rgba(16, 16, 199, 0.35);"></span> Tennisplatz 1
+								</div>
+								<div class="legend-item">
+									<span class="legend-box" style="background-color: rgba(199, 16, 40, 0.35);"></span> Tennisplatz 2
+								</div>
+							</div>
+						</div>
+
 						<table class="calendar" border="1">
 							<thead>
 								<tr>
@@ -250,13 +316,13 @@
 										document.write(`
 											<tr>
 												<td>${String(hour).padStart(2, '0')}:00 - ${String(nextHour).padStart(2, '0')}:00</td>
-												<td class="${hour >= 10 && hour < 20 ? 'crossed' : ''}"></td>
-												<td class="${hour >= 10 && hour < 20 ? 'crossed' : ''}"></td>
-												<td class="${hour >= 10 && hour < 20 ? 'crossed' : ''}"></td>
-												<td class="${hour >= 10 && hour < 20 ? 'crossed' : ''}"></td>
-												<td class="${hour >= 10 && hour < 20 ? 'crossed' : ''}"></td>
-												<td class="${hour >= 10 && hour < 20 ? 'crossed' : ''}"></td>
-												<td class="${hour >= 10 && hour < 20 ? 'crossed' : ''}"></td>
+												<td class="${hour >= 10 && hour < 20 ? 'crossed1' : ''}"></td>
+												<td class="${hour >= 10 && hour < 20 ? 'crossed1' : ''}"></td>
+												<td class="${hour >= 10 && hour < 20 ? 'crossed2' : ''}"></td>
+												<td class="${hour >= 10 && hour < 20 ? 'crossed2' : ''}"></td>
+												<td class="${hour >= 10 && hour < 20 ? 'crossed3' : ''}"></td>
+												<td class="${hour >= 10 && hour < 20 ? 'crossed3' : ''}"></td>
+												<td class="${hour >= 10 && hour < 20 ? 'crossed3' : ''}"></td>
 											</tr>
 										`);
 									}

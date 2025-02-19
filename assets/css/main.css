@@ -2030,7 +2030,13 @@ ul.menu li:first-child {
 #main-wrapper {
 	background: #fff;
 	box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.05);
-	padding: 5em 0 5em 0;
+	padding: 5em 0 3em 0;
+}
+
+#secondary-wrapper {
+	background: #fff;
+	box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.05);
+	padding: 3em 0 3em 0;
 }
 
 #footer-wrapper {
