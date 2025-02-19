@@ -2238,6 +2238,25 @@ ul.menu li:first-child {
 	padding-left: 0;
 }
 
+/* Announcement */
+
+#announcement {
+	position: relative;
+	padding: 3em 5em;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#announcement h2 {
+	font-size: 2em;
+	margin: 0.1em 0 0.7em 0;
+}
+
+#announcement p {
+	font-size: 1.2em;
+	line-height: 1.6em;
+	margin: 10px 0px;
+}
+
 /* Footer */
 
 #footer {
@@ -2765,6 +2784,10 @@ ul.menu li:first-child {
 	}
 
 	#banner-wrapper {
+		padding: 0 15px 0 15px;
+	}
+
+	#announcement-wrapper {
 		padding: 0 15px 0 15px;
 	}
 
