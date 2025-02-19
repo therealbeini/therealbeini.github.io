@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Verti by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 
 <head>
@@ -11,6 +6,56 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<script src="assets/js/slideshow.js" defer></script>
+	<style>
+		.grid-container {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 20px;
+		}
+
+		.first-column {
+			width: auto;
+		}
+
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		.calendar {
+			width: 100%;
+			margin-top: 20px;
+		}
+
+		.calendar th,
+		.calendar td {
+			padding: 10px;
+			text-align: center;
+		}
+
+		.calendar td.crossed {
+			background: linear-gradient(45deg,
+					rgba(200, 200, 200, 0.3) 25%,
+					transparent 25%,
+					transparent 50%,
+					rgba(200, 200, 200, 0.3) 50%,
+					rgba(200, 200, 200, 0.3) 75%,
+					transparent 75%,
+					transparent);
+			background-size: 10px 10px;
+		}
+
+		.slideshow {
+			max-width: 600px;
+			margin: 0 auto;
+		}
+
+		.slideshow__item img {
+			width: 100%;
+			height: auto;
+		}
+	</style>
 </head>
 
 <body class="is-preload no-sidebar">
@@ -19,12 +64,10 @@
 		<!-- Header -->
 		<div id="header-wrapper">
 			<header id="header" class="container">
-
 				<!-- Logo -->
 				<div id="logo">
 					<h1><a href="index.html">Sporttreff Hagenbach</a></h1>
 				</div>
-
 				<!-- Nav -->
 				<nav id="nav">
 					<ul>
@@ -35,7 +78,6 @@
 						<li><a href="luftartistik.html">Luftartistik</a></li>
 					</ul>
 				</nav>
-
 			</header>
 		</div>
 
@@ -43,36 +85,177 @@
 		<div id="main-wrapper">
 			<div class="container">
 				<div id="content">
-
 					<!-- Content -->
 					<article>
+						<h2>Badminton</h2>
+						<p>Badminton ist ein dynamischer und rasanter Sport, der Schnelligkeit, Präzision und Reaktionsvermögen
+							fordert.
+							In unserer modernen Halle erwartet Sie ein professioneller Badminton-Court mit gelenkschonendem Bodenbelag
+							und optimaler Federung, der für ein angenehmes Spielerlebnis sorgt.
+							Die hohen Decken bieten Ihnen die perfekte Umgebung für präzise Schläge und strategische Spielzüge, ohne
+							Einschränkungen durch niedrige Raumhöhen.
+							Dank der leistungsstarken LED-Beleuchtung genießen Sie jederzeit beste Sichtverhältnisse – ideal für
+							schnelle Ballwechsel und intensive Matches.
+							Egal ob Anfänger oder erfahrener Spieler, bei uns finden Sie die perfekten Bedingungen, um Ihr Spiel zu
+							verbessern oder einfach nur mit Freunden eine spannende Partie zu spielen.</p>
 
-						<h2>No Sidebar</h2>
-
-						<p>Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus.
-							Praesent semper mod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat.
-							Aliquam luctus et mattis lectus sit amet pulvinar. Nam turpis nisi
-							consequat etiam lorem ipsum dolor sit amet nullam.</p>
-
-						<h3>More intriguing information</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac quam risus, at tempus
-							justo. Sed dictum rutrum massa eu volutpat. Quisque vitae hendrerit sem. Pellentesque lorem felis,
-							ultricies a bibendum id, bibendum sit amet nisl. Mauris et lorem quam. Maecenas rutrum imperdiet
-							vulputate. Nulla quis nibh ipsum, sed egestas justo. Morbi ut ante mattis orci convallis tempor.
-							Etiam a lacus a lacus pharetra porttitor quis accumsan odio. Sed vel euismod nisi. Etiam convallis
-							rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non sapien.
-							Donec sagittis massa et leo semper a scelerisque metus faucibus. Morbi congue mattis mi.
-							Phasellus sed nisl vitae risus tristique volutpat. Cras rutrum commodo luctus.</p>
-
-						<p>Phasellus odio risus, faucibus et viverra vitae, eleifend ac purus. Praesent mattis, enim
-							quis hendrerit porttitor, sapien tortor viverra magna, sit amet rhoncus nisl lacus nec arcu.
-							Suspendisse laoreet metus ut metus imperdiet interdum aliquam justo tincidunt. Mauris dolor urna,
-							fringilla vel malesuada ac, dignissim eu mi. Praesent mollis massa ac nulla pretium pretium.
-							Maecenas tortor mauris, consectetur pellentesque dapibus eget, tincidunt vitae arcu.
-							Vestibulum purus augue, tincidunt sit amet iaculis id, porta eu purus.</p>
-
+						<p> Bitte beachten Sie, dass auf unserem Badminton-Court <strong>keine Schuhe mit schwarzen Sohlen</strong> erlaubt sind, um
+							den speziellen Bodenbelag zu schützen und eine optimale Spielfläche für alle zu gewährleisten.
+							Zudem bitten wir darum, in der Halle keine Getränke mitzubringen, ausgenommen Mineralwasser, um eine
+							saubere und angenehme Umgebung für alle Spieler sicherzustellen.
+							Vielen Dank für Ihr Verständnis und Ihre Kooperation!</p>
 					</article>
+				</div>
+			</div>
+		</div>
 
+		<div id="main-wrapper">
+			<div class="container">
+				<div class="row gtr-200">
+					<div class="col-6 col-12-medium">
+						<div id="sidebar">
+							<section>
+								<!-- Slideshow Container -->
+								<div class="slideshow">
+									<div class="slideshow__list">
+										<!-- Slide 1 -->
+										<div class="slideshow__item">
+											<img src="images/badminton.jpg" alt="Image 1">
+										</div>
+										<!-- Slide 2 -->
+										<div class="slideshow__item">
+											<img src="images/badminton.jpg" alt="Image 2">
+										</div>
+										<!-- Slide 3 -->
+										<div class="slideshow__item">
+											<img src="images/badminton.jpg" alt="Image 3">
+										</div>
+									</div>
+									<!-- Next/Prev Navigation -->
+									<a class="slideshow__nav--prev">&#10094;</a>
+									<a class="slideshow__nav--next">&#10095;</a>
+								</div>
+
+								<p>Die Beleuchtung der Badmintonhalle wird über einen Münzautomaten gesteuert.
+									Der Preis beträgt <strong>2 x 1€</strong> pro Stunde.</p>
+							</section>
+						</div>
+					</div>
+					<div class="col-6 col-12-medium imp-medium">
+						<div id="content">
+							<section class="last">
+								<h3>Wintersaison Preise</h3>
+								<table border="1">
+									<thead>
+										<tr>
+											<th class="first-column">Montag bis Freitag</th>
+											<th>Abo 30 Wochen</th>
+											<th>10-er Karte</th>
+											<th>Einzelst.</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="first-column">08:30 - 16:30 Uhr</td>
+											<td>360 €</td>
+											<td>140 €</td>
+											<td>16 €</td>
+										</tr>
+										<tr>
+											<td class="first-column">16:30 - 21:30 Uhr</td>
+											<td>420 €</td>
+											<td>160 €</td>
+											<td>18 €</td>
+										</tr>
+										<tr>
+											<td class="first-column">21:30 - 22:30 Uhr</td>
+											<td>360 €</td>
+											<td>140 €</td>
+											<td>16 €</td>
+										</tr>
+									</tbody>
+									<thead>
+										<tr>
+											<th class="first-column">Samstag und Sonntag</th>
+											<th></th>
+											<th></th>
+											<th></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="first-column">08:30 - 21:30 Uhr</td>
+											<td>330 €</td>
+											<td>130 €</td>
+											<td>15 €</td>
+										</tr>
+									</tbody>
+								</table>
+								<h3>Sommersaison Preise zu allen Zeiten</h3>
+								<table border="1">
+									<thead>
+										<tr>
+											<th>Abo 20 Wochen</th>
+											<th>10-er Karte</th>
+											<th>Einzelst.</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>220 €</td>
+											<td>130 €</td>
+											<td>15 €</td>
+										</tr>
+									</tbody>
+								</table>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="main-wrapper">
+			<div class="container">
+				<div id="content">
+					<!-- Content -->
+					<section>
+						<h3>Belegte Abo-Stunden</h3>
+						<table class="calendar" border="1">
+							<thead>
+								<tr>
+									<th>Zeit</th>
+									<th>Montag</th>
+									<th>Dienstag</th>
+									<th>Mittwoch</th>
+									<th>Donnerstag</th>
+									<th>Freitag</th>
+									<th>Samstag</th>
+									<th>Sonntag</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- Just from 10 to 20 crossed, need to adjust -->
+								<script>
+									for (let hour = 7; hour <= 22; hour++) {
+										const nextHour = hour + 1;
+										document.write(`
+											<tr>
+												<td>${String(hour).padStart(2, '0')}:00 - ${String(nextHour).padStart(2, '0')}:00</td>
+												<td class="${hour >= 10 && hour < 20 ? 'crossed' : ''}"></td>
+												<td class="${hour >= 10 && hour < 20 ? 'crossed' : ''}"></td>
+												<td class="${hour >= 10 && hour < 20 ? 'crossed' : ''}"></td>
+												<td class="${hour >= 10 && hour < 20 ? 'crossed' : ''}"></td>
+												<td class="${hour >= 10 && hour < 20 ? 'crossed' : ''}"></td>
+												<td class="${hour >= 10 && hour < 20 ? 'crossed' : ''}"></td>
+												<td class="${hour >= 10 && hour < 20 ? 'crossed' : ''}"></td>
+											</tr>
+										`);
+									}
+								</script>
+							</tbody>
+						</table>
+					</section>
 				</div>
 			</div>
 		</div>
@@ -82,18 +265,15 @@
 			<footer id="footer" class="container">
 				<div class="row">
 					<div class="col-3 col-6-medium col-12-small">
-
 						<!-- Links -->
 						<section class="widget links">
 							<h3>Öffnungszeiten</h3>
 							<p>Montag - Sonntags<br />
-								von 7.00 - 22.00<br />
+								von 7:00 - 22:00<br />
 							</p>
 						</section>
-
 					</div>
 					<div class="col-3 col-6-medium col-12-small">
-
 						<!-- Contact -->
 						<section class="widget contact">
 							<h3>Kontakt</h3>
@@ -102,10 +282,8 @@
 								<a href="tel:+4972732020">07273 2020</a>
 							</p>
 						</section>
-
 					</div>
 					<div class="col-3 col-6-medium col-12-small">
-
 						<!-- Contact -->
 						<section class="widget contact">
 							<h3>Facebook</h3>
@@ -114,7 +292,6 @@
 										class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
 							</ul>
 						</section>
-
 					</div>
 				</div>
 				<div class="row">
@@ -129,18 +306,15 @@
 				</div>
 			</footer>
 		</div>
-
 	</div>
 
 	<!-- Scripts -->
-
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.dropotron.min.js"></script>
 	<script src="assets/js/browser.min.js"></script>
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-
 </body>
 
 </html>
