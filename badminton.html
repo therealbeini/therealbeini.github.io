@@ -28,6 +28,12 @@
 		.calendar td {
 			padding: 1px;
 			text-align: center;
+			border-right: 1px solid rgba(0, 0, 0, 0.1);
+		}
+
+		.calendar th:last-child,
+		.calendar td:last-child {
+			border-right: none;
 		}
 
 		.calendar td.crossed {
@@ -76,6 +82,27 @@
 		.slideshow__item img {
 			width: 100%;
 			height: auto;
+		}
+
+		.heading-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.legend {
+			display: flex;
+			gap: 20px;
+		}
+
+		.legend-item {
+			font-size: 18px;
+		}
+
+		.legend-box {
+			width: 20px;
+			height: 20px;
+			display: inline-block;
 		}
 	</style>
 </head>
@@ -243,7 +270,17 @@
 				<div id="content">
 					<!-- Content -->
 					<section>
-						<h3>Belegte Abo-Stunden</h3>
+						<div class="heading-container">
+							<h3>Belegte Abo-Stunden</h3>
+
+							<!-- Legend -->
+							<div class="legend">
+								<div class="legend-item">
+									<span class="legend-box" style="background-color: rgba(16, 16, 199, 0.35);"></span> Belegt
+								</div>
+							</div>
+						</div>
+
 						<table class="calendar" border="1">
 							<thead>
 								<tr>
@@ -265,13 +302,13 @@
 										document.write(`
 											<tr>
 												<td>${String(hour).padStart(2, '0')}:30 - ${String(nextHour).padStart(2, '0')}:30</td>
-												<td class="${hour >= 10 && hour < 20 ? 'crossed' : ''}"></td>
-												<td class="${hour >= 10 && hour < 20 ? 'crossed' : ''}"></td>
-												<td class="${hour >= 10 && hour < 20 ? 'crossed' : ''}"></td>
-												<td class="${hour >= 10 && hour < 20 ? 'crossed' : ''}"></td>
-												<td class="${hour >= 10 && hour < 20 ? 'crossed' : ''}"></td>
-												<td class="${hour >= 10 && hour < 20 ? 'crossed' : ''}"></td>
-												<td class="${hour >= 10 && hour < 20 ? 'crossed' : ''}"></td>
+												<td class=""></td>
+												<td class="${hour >= 15 && hour < 18 ? 'crossed' : ''}"></td>
+												<td class=""></td>
+												<td class=""></td>
+												<td class="${hour >= 15 && hour < 18 ? 'crossed' : ''}"></td>
+												<td class=""></td>
+												<td class=""></td>
 											</tr>
 										`);
 									}

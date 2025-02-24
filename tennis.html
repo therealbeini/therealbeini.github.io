@@ -29,6 +29,12 @@
 			padding: 1px;
 			text-align: center;
 			position: relative;
+			border-right: 1px solid rgba(0, 0, 0, 0.1);
+		}
+
+		.calendar th:last-child,
+		.calendar td:last-child {
+			border-right: none;
 		}
 
 		.calendar td.crossed1 {
@@ -335,23 +341,46 @@
 								</tr>
 							</thead>
 							<tbody>
-								<!-- Just from 10 to 20 crossed, need to adjust -->
 								<script>
-									for (let hour = 7; hour <= 22; hour++) {
-										const nextHour = hour + 1;
-										document.write(`
-											<tr>
-												<td>${String(hour).padStart(2, '0')}:00 - ${String(nextHour).padStart(2, '0')}:00</td>
-												<td class="${hour >= 10 && hour < 20 ? 'crossed1' : ''}"></td>
-												<td class="${hour >= 10 && hour < 20 ? 'crossed1' : ''}"></td>
-												<td class="${hour >= 10 && hour < 20 ? 'crossed2' : ''}"></td>
-												<td class="${hour >= 10 && hour < 20 ? 'crossed2' : ''}"></td>
-												<td class="${hour >= 10 && hour < 20 ? 'crossed3' : ''}"></td>
-												<td class="${hour >= 10 && hour < 20 ? 'crossed3' : ''}"></td>
-												<td class="${hour >= 10 && hour < 20 ? 'crossed3' : ''}"></td>
-											</tr>
-										`);
+									const data = [
+										{ time: "08:00-09:00", court1: ["", "", "", "", "", "", ""], court2: ["", "", "", "", "", "", ""] },
+										{ time: "09:00-10:00", court1: ["x", "", "", "", "x", "x", ""], court2: ["x", "", "", "", "x", "x", "x"] },
+										{ time: "10:00-11:00", court1: ["x", "x", "", "", "x", "x", "x"], court2: ["x", "x", "x", "", "", "x", "x"] },
+										{ time: "11:00-12:00", court1: ["x", "x", "", "", "", "x", "x"], court2: ["x", "x", "x", "", "", "x", "x"] },
+										{ time: "12:00-13:00", court1: ["", "", "", "", "", "", "x"], court2: ["x", "", "", "", "", "x", "x"] },
+										{ time: "13:00-14:00", court1: ["", "", "", "", "", "", ""], court2: ["", "", "x", "", "", "x", ""] },
+										{ time: "14:00-15:00", court1: ["", "", "", "", "", "", ""], court2: ["x", "x", "", "", "x", "x", ""] },
+										{ time: "15:00-16:00", court1: ["x", "x", "x", "x", "x", "", ""], court2: ["x", "x", "x", "x", "x", "x", ""] },
+										{ time: "16:00-17:00", court1: ["x", "x", "x", "x", "x", "x", ""], court2: ["x", "x", "x", "x", "x", "x", "x"] },
+										{ time: "17:00-18:00", court1: ["x", "x", "x", "x", "x", "x", "x"], court2: ["x", "x", "x", "x", "x", "", "x"] },
+										{ time: "18:00-19:00", court1: ["x", "x", "x", "x", "x", "x", ""], court2: ["x", "x", "x", "x", "x", "x", ""] },
+										{ time: "19:00-20:00", court1: ["x", "x", "x", "x", "x", "x", ""], court2: ["x", "x", "x", "x", "x", "x", ""] },
+										{ time: "20:00-21:00", court1: ["x", "x", "x", "x", "x", "", ""], court2: ["x", "x", "x", "x", "", "", ""] },
+										{ time: "21:00-22:00", court1: ["x", "x", "x", "x", "x", "", ""], court2: ["", "x", "x", "x", "", "", ""] },
+										{ time: "22:00-23:00", court1: ["", "", "", "", "", "", ""], court2: ["", "", "", "", "", "", ""] },
+									];
+
+									function getClass(court1, court2) {
+										if (court1 === "x" && court2 === "x") {
+											return "crossed3";
+										} else if (court1 === "x") {
+											return "crossed1";
+										} else if (court2 === "x") {
+											return "crossed2";
+										} else {
+											return "";
+										}
 									}
+
+									data.forEach(entry => {
+										document.write(`<tr><td>${entry.time}</td>`);
+										for (let i = 0; i < 7; i++) {
+											const court1 = entry.court1[i];
+											const court2 = entry.court2[i];
+											document.write(`<td class="${getClass(court1, court2)}"></td>`);
+										}
+										document.write(`</tr>`);
+									});
 								</script>
 							</tbody>
 						</table>
