@@ -6,20 +6,153 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<script src="assets/js/slideshow.js" defer></script>
+	<style>
+		.first-column {
+			width: auto;
+		}
+
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		.calendar {
+			width: 100%;
+			margin-top: 5px;
+			border-collapse: collapse;
+			table-layout: fixed;
+		}
+
+		.calendar th,
+		.calendar td {
+			padding: 1px;
+			text-align: center;
+			position: relative;
+			border-right: 1px solid rgba(0, 0, 0, 0.1);
+		}
+
+		.calendar th:last-child,
+		.calendar td:last-child {
+			border-right: none;
+		}
+
+		.calendar td.crossed1 {
+			background: linear-gradient(45deg,
+					rgba(16, 16, 199, 0.35) 25%,
+					transparent 25%,
+					transparent 50%,
+					rgba(16, 16, 199, 0.35) 50%,
+					rgba(16, 16, 199, 0.35) 75%,
+					transparent 75%,
+					transparent);
+			background-size: 20px 20px;
+		}
+
+		.calendar td.crossed2 {
+			background: linear-gradient(45deg,
+					rgba(199, 16, 40, 0.35) 25%,
+					transparent 25%,
+					transparent 50%,
+					rgba(199, 16, 40, 0.35) 50%,
+					rgba(199, 16, 40, 0.35) 75%,
+					transparent 75%,
+					transparent);
+			background-size: 20px 20px;
+		}
+
+		.calendar td.crossed3 {
+			background:
+				linear-gradient(45deg,
+					rgba(16, 16, 199, 0.5) 25%,
+					transparent 25%,
+					transparent 50%,
+					rgba(16, 16, 199, 0.5) 50%,
+					rgba(16, 16, 199, 0.5) 75%,
+					transparent 75%,
+					transparent),
+				linear-gradient(45deg,
+					rgba(199, 16, 40, 0.4) 0%,
+					transparent 0%,
+					transparent 25%,
+					rgba(199, 16, 40, 0.4) 25%,
+					rgba(199, 16, 40, 0.4) 50%,
+					transparent 50%,
+					transparent 75%,
+					rgba(199, 16, 40, 0.4) 75%,
+					rgba(199, 16, 40, 0.4) 100%);
+			background-size: 20px 20px;
+		}
+
+		@media only screen and (max-width: 600px) {
+			.calendar th::before {
+				content: attr(data-abbr);
+				display: block;
+			}
+
+			.calendar th {
+				font-size: 12px;
+				padding: 2px;
+			}
+
+			.calendar th span {
+				display: none;
+			}
+
+			.calendar td {
+				font-size: 12px;
+			}
+
+			.calendar {
+				table-layout: fixed;
+				border-collapse: collapse;
+				width: 100%;
+			}
+		}
+
+		.slideshow {
+			max-width: 600px;
+			margin: 0 auto;
+		}
+
+		.slideshow__item img {
+			width: 100%;
+			height: auto;
+		}
+
+		.heading-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.legend {
+			display: flex;
+			gap: 20px;
+		}
+
+		.legend-item {
+			font-size: 18px;
+		}
+
+		.legend-box {
+			width: 20px;
+			height: 20px;
+			display: inline-block;
+		}
+	</style>
 </head>
 
-<body class="is-preload right-sidebar">
+<body class="is-preload no-sidebar">
 	<div id="page-wrapper">
 
 		<!-- Header -->
 		<div id="header-wrapper">
 			<header id="header" class="container">
-
 				<!-- Logo -->
 				<div id="logo">
 					<h1><a href="index.html">Sporttreff Hagenbach</a></h1>
 				</div>
-
 				<!-- Nav -->
 				<nav id="nav">
 					<ul>
@@ -28,9 +161,9 @@
 						<li><a href="badminton.html">Badminton</a></li>
 						<li><a href="kegeln.html">Kegeln</a></li>
 						<li class="current"><a href="luftartistik.html">Luftartistik</a></li>
+						<li><a href="impressum.html">Impressum</a></li>
 					</ul>
 				</nav>
-
 			</header>
 		</div>
 
@@ -40,67 +173,53 @@
 				<div class="row gtr-200">
 					<div class="col-8 col-12-medium">
 						<div id="content">
-
 							<!-- Content -->
 							<article>
+								<h2>Luftartistik mit Tanja Resedaritz</h2>
+								<p>In den Luftartistik-Kursen mit <strong>Tanja Resedaritz</strong> lernst du verschiedene Tricks und kleine Choreografien zu Musik – sowohl in der Luft als auch am Boden. Ob an üchern, Ringen oder anderen luftakrobatischen Requisiten, hier erlebst du die perfekte Mischung aus Bewegung, Ausdruck und Körperbeherrschung. Neben der körperlichen Herausforderung geht es auch um kreative Entfaltung, Ästhetik und das Erleben der Schwerelosigkeit. Durch gezieltes Training werden Kraft, Ausdauer und Flexibilität aufgebaut, sodass du dich sicher und selbstbewusst in die Lüfte schwingen kannst. Dabei stehen individuelle Betreuung und eine positive Lernatmosphäre im Vordergrund, sodass du in deinem eigenen Tempo Fortschritte machen kannst.
 
-								<h2>Right Sidebar</h2>
+								<h3>Was erwartet dich?</h3>
+								<ul>
+									<li>Techniktraining an verschiedenen Luftartistik-Requisiten</li>
+									<li>Kleine Choreografien zur Musik</li>
+									<li><strong>Ganzkörpertraining</strong> mit Kraft, Stretching, Koordination & Kondition</li>
+									<li>Ein kreativer und ausdrucksstarker Sport</li>
+									<li>Sichere & gesundheitsfördernde Bewegung in kleinen Gruppen</li>
+								</ul>
 
-								<p>Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus.
-									Praesent semper mod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat.
-									Aliquam luctus et mattis lectus sit amet pulvinar. Nam turpis nisi
-									consequat etiam lorem ipsum dolor sit amet nullam.</p>
+								<h3>Kursablauf</h3>
+								<p>Jede Einheit dauert <strong>60–70 Minuten</strong> und beginnt mit einem mindestens <strong>20-minütigen Aufwärmtraining</strong>, das Kraft, Flexibilität und Koordination fördert. Danach geht es an die akrobatischen Elemente – individuell angepasst an dein Level.</p>
 
-								<h3>More intriguing information</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac quam risus, at tempus
-									justo. Sed dictum rutrum massa eu volutpat. Quisque vitae hendrerit sem. Pellentesque lorem felis,
-									ultricies a bibendum id, bibendum sit amet nisl. Mauris et lorem quam. Maecenas rutrum imperdiet
-									vulputate. Nulla quis nibh ipsum, sed egestas justo. Morbi ut ante mattis orci convallis tempor.
-									Etiam a lacus a lacus pharetra porttitor quis accumsan odio. Sed vel euismod nisi. Etiam convallis
-									rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non sapien.
-									Donec sagittis massa et leo semper a scelerisque metus faucibus. Morbi congue mattis mi.
-									Phasellus sed nisl vitae risus tristique volutpat. Cras rutrum commodo luctus.</p>
+								<h3>Für wen sind die Kurse geeignet?</h3>
+								<p>Ob Anfänger oder Fortgeschrittene – hier ist jeder willkommen! Luftartistik fördert nicht nur Kraft und Beweglichkeit, sondern auch Achtsamkeit, Körpergefühl und kreativen Ausdruck.</p>
 
-								<p>Phasellus odio risus, faucibus et viverra vitae, eleifend ac purus. Praesent mattis, enim
-									quis hendrerit porttitor, sapien tortor viverra magna, sit amet rhoncus nisl lacus nec arcu.
-									Suspendisse laoreet metus ut metus imperdiet interdum aliquam justo tincidunt. Mauris dolor urna,
-									fringilla vel malesuada ac, dignissim eu mi. Praesent mollis massa ac nulla pretium pretium.
-									Maecenas tortor mauris, consectetur pellentesque dapibus eget, tincidunt vitae arcu.
-									Vestibulum purus augue, tincidunt sit amet iaculis id, porta eu purus.</p>
+								<h3>Kurszeiten & Anmeldung</h3>
+								<div class="contact">
+									<p><strong>📍 Wo?</strong> Sporttreff Hagenbach<br>
+									<strong>📅 Wann?</strong> Dienstags & Freitags<br>
+									<strong>📩 E-Mail:</strong> <a href="mailto:tanja.resedaritz@gmail.com">tanja.resedaritz@gmail.com</a><br>
+									<strong>📞 Telefon:</strong> <a href="tel:+4915253495564">+49 1525 3495564</a></p>
+								</div>
 
+								<p><strong>Entdecke die Faszination der Luftartistik – wir freuen uns auf dich!</strong></p>
 							</article>
-
 						</div>
 					</div>
 					<div class="col-4 col-12-medium">
 						<div id="sidebar">
-
-							<!-- Sidebar -->
+							<!-- Bildergalerie -->
 							<section>
-								<h3>Subheading</h3>
-								<p>Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus.
-									Praesent semper mod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat.
-									Aliquam luctus et mattis lectus sit amet pulvinar. Nam turpis nisi
-									consequat etiam.</p>
-								<footer>
-									<a href="#" class="button icon solid fa-info-circle">Find out more</a>
-								</footer>
+								<h3>Bildergalerie</h3>
+								<div class="sidebar-gallery">
+									<img src="images/luftartistik1.jpg" alt="Luftartistik Bild 1" style="width:100%; margin-bottom: 10px;">
+									<img src="images/luftartistik2.jpg" alt="Luftartistik Bild 2" style="width:100%; margin-bottom: 10px;">
+									<img src="images/luftartistik3.jpg" alt="Luftartistik Bild 3" style="width:100%; margin-bottom: 10px;">
+								</div>
 							</section>
-
-							<section>
-								<h3>Subheading</h3>
-								<ul class="style2">
-									<li><a href="#">Amet turpis, feugiat et sit amet</a></li>
-									<li><a href="#">Ornare in hendrerit in lectus</a></li>
-									<li><a href="#">Semper mod quis eget mi dolore</a></li>
-									<li><a href="#">Quam turpis feugiat sit dolor</a></li>
-									<li><a href="#">Amet ornare in hendrerit in lectus</a></li>
-									<li><a href="#">Semper mod quisturpis nisi</a></li>
-								</ul>
-							</section>
-
 						</div>
 					</div>
+				</div>
+				<div id="content">
 				</div>
 			</div>
 		</div>
@@ -112,14 +231,9 @@
 					<div class="col-3 col-6-medium col-12-small">
 						<!-- Impressum -->
 						<section class="widget links">
-							<h3>Impressum</h3>
-							<p>Sporttreff Hagenbach<br />
-								Am Hochufer 2, 76767 Hagenbach<br />
-								Telefon: 07273 2020<br />
-								E-Mail: shaman4441@aol.com<br />
-								Geschäftsführer: Peter Feldmann<br />
-								Handelsregister: TODO<br />
-								USt-IdNr.: TODO
+							<h3>Urheberrecht</h3>
+							<p>Alle Rechte vorbehalten.<br />
+								© Sporttreff Hagenbach<br />
 							</p>
 						</section>
 					</div>
@@ -181,14 +295,12 @@
 	</div>
 
 	<!-- Scripts -->
-
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.dropotron.min.js"></script>
 	<script src="assets/js/browser.min.js"></script>
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-
 </body>
 
 </html>
