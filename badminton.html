@@ -299,38 +299,49 @@
 						</div>
 
 						<table class="calendar" border="1">
-							<thead>
-								<tr>
-									<th>Zeit</th>
-									<th data-abbr="Mo"><span>Montag</span></th>
-									<th data-abbr="Di"><span>Dienstag</span></th>
-									<th data-abbr="Mi"><span>Mittwoch</span></th>
-									<th data-abbr="Do"><span>Donnerstag</span></th>
-									<th data-abbr="Fr"><span>Freitag</span></th>
-									<th data-abbr="Sa"><span>Samstag</span></th>
-									<th data-abbr="So"><span>Sonntag</span></th>
-								</tr>
-							</thead>
-							<tbody>
-								<!-- Just from 10 to 20 crossed, need to adjust -->
-								<script>
-									for (let hour = 7; hour <= 21; hour++) {
-										const nextHour = hour + 1;
-										document.write(`
-											<tr>
-												<td>${String(hour).padStart(2, '0')}:30 - ${String(nextHour).padStart(2, '0')}:30</td>
-												<td class=""></td>
-												<td class="${hour >= 15 && hour < 18 ? 'crossed' : ''}"></td>
-												<td class=""></td>
-												<td class=""></td>
-												<td class="${hour >= 15 && hour < 18 ? 'crossed' : ''}"></td>
-												<td class=""></td>
-												<td class=""></td>
-											</tr>
-										`);
-									}
-								</script>
-							</tbody>
+					        <thead>
+					            <tr>
+					                <th>Zeit</th>
+					                <th data-abbr="Mo"><span>Montag</span></th>
+					                <th data-abbr="Di"><span>Dienstag</span></th>
+					                <th data-abbr="Mi"><span>Mittwoch</span></th>
+					                <th data-abbr="Do"><span>Donnerstag</span></th>
+					                <th data-abbr="Fr"><span>Freitag</span></th>
+					                <th data-abbr="Sa"><span>Samstag</span></th>
+					                <th data-abbr="So"><span>Sonntag</span></th>
+					            </tr>
+					        </thead>
+					        <tbody>
+					            <script>
+					                const data = [
+					                    { time: "07:30-08:30", days: ["", "", "", "", "", "", ""] },
+					                    { time: "08:30-09:30", days: ["", "", "", "", "", "", ""] },
+					                    { time: "09:30-10:30", days: ["", "", "", "", "", "", ""] },
+					                    { time: "10:30-11:30", days: ["", "", "", "", "", "", ""] },
+					                    { time: "11:30-12:30", days: ["", "", "", "", "", "", ""] },
+					                    { time: "12:30-13:30", days: ["", "", "", "", "", "", ""] },
+					                    { time: "13:30-14:30", days: ["", "", "", "", "", "", ""] },
+					                    { time: "14:30-15:30", days: ["x", "x", "", "", "", "", ""] },
+					                    { time: "15:30-16:30", days: ["x", "x", "", "", "", "", ""] },
+					                    { time: "16:30-17:30", days: ["x", "x", "", "", "", "", ""] },
+					                    { time: "17:30-18:30", days: ["x", "x", "x", "", "x", "", ""] },
+					                    { time: "18:30-19:30", days: ["x", "x", "", "", "x", "", ""] },
+					                    { time: "19:30-20:30", days: ["x", "x", "", "x", "", "", ""] },
+					                    { time: "20:30-21:30", days: ["x", "", "", "", "", "", ""] },
+					                    { time: "21:30-22:30", days: ["", "", "", "", "", "", ""] },
+					                ];
+					
+					                data.forEach(entry => {
+					                    let rowHtml = `<tr><td>${entry.time}</td>`;
+					                    entry.days.forEach(day => {
+					                        const className = day === "x" ? "crossed" : "";
+					                        rowHtml += `<td class="${className}"></td>`;
+					                    });
+					                    rowHtml += `</tr>`;
+					                    document.write(rowHtml);
+					                });
+					            </script>
+					        </tbody>
 						</table>
 					</section>
 				</div>
@@ -412,5 +423,6 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 </body>
+
 
 </html>
