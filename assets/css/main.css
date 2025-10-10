@@ -2793,6 +2793,7 @@ ul.menu li:first-child {
 
 	#announcement-wrapper {
 		padding: 0 15px 0 15px;
+		justify-content: center;
 	}
 
 	#features-wrapper {
@@ -2874,7 +2875,7 @@ ul.menu li:first-child {
 		text-align: left;
 	}
 
-	.widget.contact ul{
+	.widget.contact ul {
 		margin-left: 0.5em;
 	}
 
